@@ -13,7 +13,7 @@ const Banner = () => {
                         <h2 className='text-6xl font-bold text-[#E0035D]'>The  Ultimate <br /> Toy Store</h2>
                         <p className='font-bold text-xl text-[#000030]'>Delivering Smile With Toys. Get Your Unstable Fun And Learning experience With Our Creative Toys </p>
                         <div className='text-center'>
-                            <button className="btn bg-[#FEBF00] border-none mr-5 px-8 font-bold text-xl text-black rounded-3xl hover:text-white">Read More</button>
+                            <button className="btn bg-[#FEBF00] `border-none mr-5 px-8 font-bold text-xl text-black rounded-3xl hover:text-white">Read More</button>
                         </div>
                     </div>
                 </div>
