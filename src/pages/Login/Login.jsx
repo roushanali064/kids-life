@@ -12,11 +12,7 @@ const Login = () => {
         console.log('clicked')
         googleSignIn()
         .then(res=>{
-            Swal.fire(
-                'Log In Successfully!',
-                'You clicked the button!',
-                'success'
-              )
+           
         })
         .catch(error=>{
             console.log(error.message)

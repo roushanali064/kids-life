@@ -8,22 +8,24 @@ const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
     const handleLogOut = () => {
         logOut()
-        .then(res=>{
-            Swal.fire(
-                'Log Out Successful!',
-                'You clicked the button!',
-                'success'
-              )
-        })
-        .catch(error=>{
-            console.log(error.message)
-        })
+            .then(res => {
+                Swal.fire(
+                    'Log Out Successful!',
+                    'You clicked the button!',
+                    'success'
+                )
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
     }
     const li = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/allToys'>All Toys</Link></li>
-        <li><Link>My Toys</Link></li>
-        <li><Link>Add A Toy</Link></li>
+        {user && <>
+            <li><Link>My Toys</Link></li>
+            <li><Link>Add A Toy</Link></li>
+        </>}
         <li><Link>Blogs</Link></li>
     </>
 
@@ -48,6 +50,16 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+                {
+                    user &&
+                    <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+                        <div className="avatar mr-10">
+                            <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 ">
+                                <img src={user?.photoURL} />
+                            </div>
+                        </div>
+                    </div>
+                }
                 {user ? <Link className="btn bg-[#FEBF00] border-none rounded text-black font-bold text-xl hover:text-white" onClick={handleLogOut}>Log Out</Link> : <Link className="btn bg-[#FEBF00] border-none rounded text-black font-bold text-xl hover:text-white" to='/login'>Login</Link>}
             </div>
         </div>

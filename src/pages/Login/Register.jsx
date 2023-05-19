@@ -7,7 +7,17 @@ import Swal from "sweetalert2";
 
 const Register = () => {
 
-    const { SignUpWithEmail, profileUpdate } = useContext(AuthContext);
+    const { SignUpWithEmail, profileUpdate, googleSignIn } = useContext(AuthContext);
+    const handleGoogleSignIn=()=>{
+        console.log('clicked')
+        googleSignIn()
+        .then(res=>{
+           
+        })
+        .catch(error=>{
+            console.log(error.message)
+        })
+    }
     const handleSignUp = (event) => {
         event.preventDefault();
         const from = event.target;
@@ -106,7 +116,7 @@ const Register = () => {
                         </form>
                         <h2>Already Have An Account ? <Link className='text-orange-600' to='/login'>Login</Link></h2>
                         <div className="divider">OR</div>
-                        <div className="grid h-20 text-3xl place-items-center"><button><FaGoogle></FaGoogle></button></div>
+                        <div className="grid h-20 text-3xl place-items-center"><button onClick={handleGoogleSignIn}><FaGoogle></FaGoogle></button></div>
                     </div>
                 </div>
             </div>
