@@ -6,7 +6,22 @@ import { AuthContext } from "../Shared/Provider/AuthProvider/AuthProvider";
 
 const Login = () => {
 
-    const { SignInWithEmail } = useContext(AuthContext);
+    const { SignInWithEmail, googleSignIn } = useContext(AuthContext);
+
+    const handleGoogleSignIn=()=>{
+        console.log('clicked')
+        googleSignIn()
+        .then(res=>{
+            Swal.fire(
+                'Log In Successfully!',
+                'You clicked the button!',
+                'success'
+              )
+        })
+        .catch(error=>{
+            console.log(error.message)
+        })
+    }
 
     const handleLogin = event => {
         event.preventDefault()
@@ -59,7 +74,9 @@ const Login = () => {
                         <h3>New To Kids Life ? <Link
                             className='text-orange-600' to='/register'>Sign Up</Link></h3>
                         <div className="divider">OR</div>
-                        <div className="grid h-20 text-3xl place-items-center"><button><FaGoogle></FaGoogle></button></div>
+                        <div className="grid h-20 text-3xl place-items-center">
+                            <button onClick={handleGoogleSignIn}><FaGoogle></FaGoogle></button>
+                        </div>
                     </div>
                 </div>
             </div>
