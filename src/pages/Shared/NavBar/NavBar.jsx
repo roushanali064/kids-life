@@ -1,7 +1,24 @@
 import { Link } from "react-router-dom";
 import logo from '../../../assets/logo.png'
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const NavBar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+        .then(res=>{
+            Swal.fire(
+                'Log Out Successful!',
+                'You clicked the button!',
+                'success'
+              )
+        })
+        .catch(error=>{
+            console.log(error.message)
+        })
+    }
     const li = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/allToys'>All Toys</Link></li>
@@ -31,7 +48,7 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link className="btn bg-[#FEBF00] border-none rounded text-black font-bold text-xl hover:text-white" to='/login'>Login</Link>
+                {user ? <Link className="btn bg-[#FEBF00] border-none rounded text-black font-bold text-xl hover:text-white" onClick={handleLogOut}>Log Out</Link> : <Link className="btn bg-[#FEBF00] border-none rounded text-black font-bold text-xl hover:text-white" to='/login'>Login</Link>}
             </div>
         </div>
     );

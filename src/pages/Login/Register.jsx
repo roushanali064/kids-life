@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 const Register = () => {
 
-    const { SignUpWithEmail } = useContext(AuthContext);
+    const { SignUpWithEmail, profileUpdate } = useContext(AuthContext);
     const handleSignUp = (event) => {
         event.preventDefault();
         const from = event.target;
@@ -16,23 +16,27 @@ const Register = () => {
         const email = from.email.value;
         const password = from.password.value;
         const conFormPassword = from.conFormPassword.value;
-        if(password !== conFormPassword){
+
+        if (password !== conFormPassword) {
             Swal.fire({
                 icon: 'error',
                 title: 'Password Not Match',
                 text: 'Password And Confirm Password Not Match!',
-              })
+            })
             return
         }
-        
-        SignUpWithEmail(email,password)
-        .then(res=>{
-            const loggedUser = res.user;
-            console.log(loggedUser)
-        })
-        .catch(error=>{
-            console.log(error.message)
-        })
+
+        SignUpWithEmail(email, password)
+            .then(res => {
+                const loggedUser = res.user;
+                profileUpdate(loggedUser, name, url)
+                console.log(loggedUser)
+                from.reset()
+
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
     }
 
     return (
