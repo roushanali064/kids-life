@@ -1,15 +1,47 @@
+import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Shared/Provider/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
+
+    const { SignUpWithEmail } = useContext(AuthContext);
+    const handleSignUp = (event) => {
+        event.preventDefault();
+        const from = event.target;
+        const name = from.name.value;
+        const url = from.Url.value;
+        const email = from.email.value;
+        const password = from.password.value;
+        const conFormPassword = from.conFormPassword.value;
+        if(password !== conFormPassword){
+            Swal.fire({
+                icon: 'error',
+                title: 'Password Not Match',
+                text: 'Password And Confirm Password Not Match!',
+              })
+            return
+        }
+        
+        SignUpWithEmail(email,password)
+        .then(res=>{
+            const loggedUser = res.user;
+            console.log(loggedUser)
+        })
+        .catch(error=>{
+            console.log(error.message)
+        })
+    }
+
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
                         <h1 className="text-3xl text-center font-bold">Create An Account!</h1>
-                        <form>
+                        <form onSubmit={handleSignUp}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -17,6 +49,16 @@ const Register = () => {
                                 <input type="text"
                                     name='name'
                                     placeholder="Enter Your Name"
+                                    required
+                                    className="input input-bordered" />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo Url</span>
+                                </label>
+                                <input type="url"
+                                    name='Url'
+                                    placeholder="Enter Photo Url"
                                     required
                                     className="input input-bordered" />
                             </div>
