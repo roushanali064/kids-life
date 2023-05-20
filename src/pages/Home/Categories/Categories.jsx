@@ -14,7 +14,7 @@ const Categories = () => {
             .then(data => setToys(data))
     }, [category])
     
-    const categoryCards = <div className='grid grid-cols-1 md:grid-cols-2 mt-10 gap-1'>
+    const categoryCards = <div className='flex justify-center mt-10 gap-5'>
         {
             toys.map(toy=><CategoryCard
             key={toy._id}
