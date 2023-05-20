@@ -1,40 +1,63 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import CategoryCard from './CategoryCard';
 
 const Categories = () => {
     const [activeTab, setActiveTab] = useState(0);
+    const [category, setCategory] = useState("Racing Cars");
+    const [toys, setToys] = useState([])
 
-  const categories = ['Racing Cars', 'Classic Cars', 'Off-Road Cars'];
+    useEffect(() => {
+        fetch(`http://localhost:5000/products/${category}`)
+            .then(res => res.json())
+            .then(data => setToys(data))
+    }, [category])
+    
+    const categoryCards = <div className='grid grid-cols-1 md:grid-cols-2 mt-10 gap-1'>
+        {
+            toys.map(toy=><CategoryCard
+            key={toy._id}
+            toy={toy}
+            ></CategoryCard>)
+        }
+    </div>
 
-  const handleTabChange = (index) => {
-    setActiveTab(index);
-  };
+    const handleTabChange = (index) => {
+        setActiveTab(index);
+    };
     return (
         <div className='mt-24 mb-24'>
-            <h2 className='mb-20 text-4xl font-bold text-center text-[#E0035D]'>Shop by categorys</h2>
+            <h2 className='mb-20 text-4xl font-bold text-center text-[#E0035D]'>Shop by categories</h2>
             <Tabs selectedIndex={activeTab} onSelect={handleTabChange}>
                 <TabList className="flex justify-center border-none bg-yellow-500 rounded-xl">
-                    {categories.map((category, index) => (
-                        <Tab
-                            key={index}
-                            className="p-4 text-white font-bold"
-                        >
-                            <button className="focus:outline-none">{category}</button>
-                        </Tab>
-                    ))}
+                    {/* tabs 1 */}
+                    <Tab className="p-4 text-white font-bold">
+                        <button onClick={() => setCategory("Racing Cars")}
+                            className="focus:outline-none">Racing Cars</button>
+                    </Tab>
+                    {/* tabs 2 */}
+                    <Tab className="p-4 text-white font-bold">
+                        <button onClick={() => setCategory("Classic Cars")} className="focus:outline-none"
+                        >Classic Cars</button>
+                    </Tab>
+                    {/* tabs 3 */}
+                    <Tab className="p-4 text-white font-bold">
+                        <button onClick={() => { setCategory("Off-Road Cars") }} className="focus:outline-none"
+                        >Off-Road Cars</button>
+                    </Tab>
                 </TabList>
 
                 <TabPanel>
-                    <h1>hello</h1>
+                    {categoryCards}
                 </TabPanel>
 
                 <TabPanel>
-                    {/* Content for Classic Cars */}
+                {categoryCards}
                 </TabPanel>
 
                 <TabPanel>
-                    {/* Content for Off-Road Cars */}
+                {categoryCards}
                 </TabPanel>
             </Tabs>
         </div>
