@@ -11,46 +11,46 @@ const Gallery = () => {
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="grid gap-4">
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={img1} alt="" />
+                        <img class="h-auto max-w-full rounded-lg" src="https://i.ibb.co/3zjr0WJ/gallery-1-1.jpg" alt="" />
                     </div>
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={img2} alt="" />
+                        <img class="h-auto max-w-full rounded-lg" src="https://i.ibb.co/BntxvPx/gallery-2-1.jpg" alt="" />
                     </div>
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={img4} alt="" />
-                    </div>
-                </div>
-                <div class="grid gap-4">
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg" src={img3} alt="" />
-                    </div>
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg" src={img4} alt="" />
-                    </div>
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg" src={img1} alt="" />
+                        <img class="h-auto max-w-full rounded-lg" src="https://i.ibb.co/D7jZYSn/gallery-4-1.jpg" alt="" />
                     </div>
                 </div>
                 <div class="grid gap-4">
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={img2} alt="" />
+                        <img class="h-auto max-w-full rounded-lg" src="https://i.ibb.co/SQF9VxD/gallery-3-1.jpg" alt="" />
                     </div>
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={img3} alt="" />
+                        <img class="h-auto max-w-full rounded-lg" src="https://i.ibb.co/D7jZYSn/gallery-4-1.jpg" alt="" />
                     </div>
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={img4} alt="" />
+                        <img class="h-auto max-w-full rounded-lg" src="https://i.ibb.co/3zjr0WJ/gallery-1-1.jpg" alt="" />
                     </div>
                 </div>
                 <div class="grid gap-4">
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={img1} alt="" />
+                        <img class="h-auto max-w-full rounded-lg" src="https://i.ibb.co/BntxvPx/gallery-2-1.jpg" alt="" />
                     </div>
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={img2} alt="" />
+                        <img class="h-auto max-w-full rounded-lg" src="https://i.ibb.co/SQF9VxD/gallery-3-1.jpg" alt="" />
                     </div>
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src={img3} alt="" />
+                        <img class="h-auto max-w-full rounded-lg" src="https://i.ibb.co/D7jZYSn/gallery-4-1.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="grid gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="https://i.ibb.co/3zjr0WJ/gallery-1-1.jpg" alt="" />
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="https://i.ibb.co/BntxvPx/gallery-2-1.jpg" alt="" />
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="https://i.ibb.co/SQF9VxD/gallery-3-1.jpg" alt="" />
                     </div>
                 </div>
             </div>

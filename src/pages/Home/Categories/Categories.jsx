@@ -12,6 +12,7 @@ const Categories = () => {
   };
     return (
         <div className='mt-24 mb-24'>
+            <h2 className='mb-20 text-4xl font-bold text-center text-[#E0035D]'>Shop by categorys</h2>
             <Tabs selectedIndex={activeTab} onSelect={handleTabChange}>
                 <TabList className="flex justify-center border-none bg-yellow-500 rounded-xl">
                     {categories.map((category, index) => (
