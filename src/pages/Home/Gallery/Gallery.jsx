@@ -7,7 +7,7 @@ import img4 from '../../../assets/gallery-4.jpg'
 const Gallery = () => {
     return (
         <div className='mt-28'>
-            <h2 className='text-4xl font-bold text-center'>Our Toys Gallery</h2>
+            <h2 className='text-4xl font-bold text-center text-[#E0035D] mb-24'>Our Toys Gallery</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="grid gap-4">
                     <div>
