@@ -6,3 +6,4 @@
 * click the all toys to see all toys the toys page in limit in 20 data
 * click to add toys you add some toys in database
 * click to my toys page to show your added toys
+* you click the tabs to see some categories data
