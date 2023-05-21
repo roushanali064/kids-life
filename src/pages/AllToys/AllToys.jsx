@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ToysTable from './ToysTable';
+import useTitle from '../../hooks/useTitle';
 
 const AllToys = () => {
+    useTitle('All Toys')
     const [toys, setToys] = useState([]);
     useEffect(() => {
         fetch('https://kid-life-server.vercel.app/products')

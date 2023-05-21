@@ -1,3 +1,4 @@
+import useTitle from "../../../hooks/useTitle";
 import Banner from "../Banner/Banner";
 import Categories from "../Categories/Categories";
 import Gallery from "../Gallery/Gallery";
@@ -7,8 +8,9 @@ import Offer from "../Offer/Offer";
 
 
 const Home = () => {
+    useTitle('Home')
     return (
-        <div>
+        <div className="overflow-hidden">
             <Banner></Banner>
             <Gallery />
             <Categories></Categories>

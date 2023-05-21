@@ -7,8 +7,8 @@ const NewArivial = () => {
     return (
         <div className='mb-28 mt-24' data-aos='flip-up'>
             <h3 className='mb-20 text-4xl font-bold text-center text-[#E0035D]'>Customer's Favorites</h3>
-            <div className="card lg:card-side bg-base-100 shadow-xl h-96 ">
-                <figure className='w-1/2 rounded'><img className='rounded' src="https://i.ibb.co/3zjr0WJ/gallery-1-1.jpg" alt="Album" /></figure>
+            <div className="card lg:card-side bg-base-100 shadow-xl md:h-96 ">
+                <figure className='md:w-1/2 rounded'><img className='rounded' src="https://i.ibb.co/3zjr0WJ/gallery-1-1.jpg" alt="Album" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-2xl font-bold text-yellow-500">Customer Favorites Toys Car</h2>
                     <p className='text-xl font-bold'>Name: <span className='text-[#E0035D]'>Nostalgic Roadster</span></p>
