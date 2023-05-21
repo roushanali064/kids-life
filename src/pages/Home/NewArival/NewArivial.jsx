@@ -1,10 +1,11 @@
 import React from 'react';
 import Rating from 'react-rating';
 import { FaStar, FaStarHalf } from "react-icons/fa";
+import 'aos/dist/aos.css';
 
 const NewArivial = () => {
     return (
-        <div className='mb-28 mt-24'>
+        <div className='mb-28 mt-24' data-aos='flip-up'>
             <h3 className='mb-20 text-4xl font-bold text-center text-[#E0035D]'>Customer's Favorites</h3>
             <div className="card lg:card-side bg-base-100 shadow-xl h-96 ">
                 <figure className='w-1/2 rounded'><img className='rounded' src="https://i.ibb.co/3zjr0WJ/gallery-1-1.jpg" alt="Album" /></figure>

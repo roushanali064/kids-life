@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import CategoryCard from './CategoryCard';
+import 'aos/dist/aos.css';
 
 const Categories = () => {
     const [activeTab, setActiveTab] = useState(0);
     const [category, setCategory] = useState("Racing Cars");
     const [toys, setToys] = useState([])
+    
 
     useEffect(() => {
         fetch(`https://kid-life-server-roushanali064.vercel.app/products/${category}`)
@@ -27,7 +29,7 @@ const Categories = () => {
         setActiveTab(index);
     };
     return (
-        <div className='mt-24 mb-24'>
+        <div className='mt-24 mb-24' data-aos='flip-up'>
             <h2 className='mb-20 text-4xl font-bold text-center text-[#E0035D]'>Shop by categories</h2>
             <Tabs selectedIndex={activeTab} onSelect={handleTabChange}>
                 <TabList className="flex justify-center border-none bg-yellow-500 rounded-xl">

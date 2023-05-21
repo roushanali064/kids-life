@@ -1,9 +1,12 @@
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const Gallery = () => {
+    Aos.init({duration: 2000})
+
     return (
-        <div className='mt-28'>
+        <div className='mt-28' data-aos='flip-up'>
             <h2 className='text-4xl font-bold text-center text-[#E0035D] mb-24'>Our Toys Gallery</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="grid gap-4">

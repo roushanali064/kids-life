@@ -1,9 +1,10 @@
 import React from 'react';
 import img from '../../../assets/slider-3.jpg'
+import 'aos/dist/aos.css';
 
 const Offer = () => {
     return (
-        <div className="hero min-h-screen rounded-md mb-28" style={{ backgroundImage: `url(${img})` }}>
+        <div className="hero min-h-screen rounded-md mb-28" style={{ backgroundImage: `url(${img})` }} data-aos='flip-up'>
             <div className="hero-overlay bg-[#F6C01E] bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
