@@ -10,6 +10,8 @@ const AllToys = () => {
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
+
+
     return (
         <div className='mt-28 mb-28'>
             <div className="overflow-x-auto w-full">
