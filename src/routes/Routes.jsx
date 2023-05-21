@@ -11,6 +11,7 @@ import AddToy from "../pages/AddToy/AddToy";
 import MyToy from "../pages/MyToy/MyToy";
 import Blogs from "../pages/Blogs/Blogs";
 import ViewDetails from "../pages/ViewDedails/ViewDetails";
+import UpdateToy from "../pages/UpdateToy/UpdateToy";
 
 const router = createBrowserRouter([
     {
@@ -44,7 +45,11 @@ const router = createBrowserRouter([
             {
                 path:'toy/:id',
                 element: <PrivateRoutes><ViewDetails></ViewDetails></PrivateRoutes>,
-                loader:({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
+                loader:({params})=>fetch(`https://kid-life-server.vercel.app/toy/${params.id}`)
+            },
+            {
+                path: 'updateToy/:id',
+                element: <UpdateToy></UpdateToy>
             },
             {
                 path: 'blogs',

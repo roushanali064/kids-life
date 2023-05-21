@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MyToysTable = ({ toy, handleDelate }) => {
     const { imageUrl, subCategory, sellerName, sellerEmail, _id } = toy
@@ -20,9 +21,11 @@ const MyToysTable = ({ toy, handleDelate }) => {
             <td>
                 {sellerEmail}
             </td>
-            <td><button className='btn btn-primary'>Update Data</button></td>
+            <td>
+                <Link to={`/updateToy/${_id}`}><button className='btn btn-primary'>Update Data</button></Link>
+            </td>
             <th>
-                <button onClick={()=>handleDelate(_id)} className="btn btn-secondary">Delate</button>
+                <button onClick={() => handleDelate(_id)} className="btn btn-secondary">Delate</button>
             </th>
         </tr>
     );
