@@ -19,12 +19,12 @@ const PrivateRoutes = ({children}) => {
     }
     if(!user){
         Swal.fire({
-            title: 'Custom animation with Animate.css',
+            title: 'At First Login Or Register Your Account',
             showClass: {
               popup: 'animate__animated animate__fadeInDown'
             },
             hideClass: {
-              popup: 'At First Login Or Register Your Account'
+              popup: 'animate__animated animate__fadeOutUp'
              
             }
           })
