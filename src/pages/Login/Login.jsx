@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../Shared/Provider/AuthProvider/AuthProvider";
@@ -8,11 +8,15 @@ const Login = () => {
 
     const { SignInWithEmail, googleSignIn } = useContext(AuthContext);
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
+
     const handleGoogleSignIn=()=>{
         console.log('clicked')
         googleSignIn()
         .then(res=>{
-           
+            navigate(from)
         })
         .catch(error=>{
             console.log(error.message)
@@ -29,8 +33,8 @@ const Login = () => {
         SignInWithEmail(email,password)
         .then(res=>{
             const loggedUser = res.user;
-            console.log(loggedUser)
             from.reset()
+            navigate(from)
         })
         .catch(error=>{
             console.log(error)

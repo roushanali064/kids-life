@@ -9,7 +9,7 @@ const Categories = () => {
     const [toys, setToys] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${category}`)
+        fetch(`https://kid-life-server-roushanali064.vercel.app/products/${category}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [category])
