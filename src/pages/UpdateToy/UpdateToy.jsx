@@ -12,7 +12,7 @@ const UpdateToy = () => {
         const details = from.details.value
         const updateDoc = {prize,quantity,details}
         console.log(updateDoc)
-        fetch(`https://kid-life-server.vercel.app/${id.id}`,{
+        fetch(`https://kid-life-server.vercel.app/update/${id.id}`,{
             method: 'PATCH',
             headers:{
                 'content-type':'application/json'
